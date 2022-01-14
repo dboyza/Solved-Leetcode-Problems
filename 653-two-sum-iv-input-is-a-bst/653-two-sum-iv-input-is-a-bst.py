@@ -12,10 +12,10 @@ class Solution:
 
             while len(queue) > 0:
                 curr = queue.pop(0)
-                if target-curr.val in seen:
+                if curr.val in seen:
                     return True
                 else:
-                    seen[curr.val] = True
+                    seen[target-curr.val] = True
                 if curr.left:
                     queue.append(curr.left)
                 if curr.right:
