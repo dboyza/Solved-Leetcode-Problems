@@ -19,7 +19,7 @@ class Solution(object):
         """
         Time: O(n), Space: O(n)
         Use a hashmap (dictionary)
-        Add each element of nums to the dictionary with (key=i, value=target-nums[i])
+        Add each element of nums to the dictionary with (key=target-nums[i], value=i)
         """
         seen = {}
         
