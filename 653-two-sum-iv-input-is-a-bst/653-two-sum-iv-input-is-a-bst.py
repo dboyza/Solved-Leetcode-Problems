@@ -6,10 +6,10 @@
 #         self.right = right
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
-        """
-        BFS iterative
-        """
-        def BFS(curr, target):
+        # BFS Iterative
+        return self.BFS(root, k)
+    
+    def BFS(self, curr, target):
             seen = {}
             queue = [curr]
 
@@ -24,4 +24,6 @@ class Solution:
                 if curr.right:
                     queue.append(curr.right)
             return False
-        return BFS(root, k)
+        
+    
+    
