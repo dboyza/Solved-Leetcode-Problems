@@ -13,8 +13,10 @@ class MyHashSet:
         self.bucket[hash_key] = key
 
     def remove(self, key: int) -> None:
+        
         hash_key = self.hash(key)
-        self.bucket[hash_key] = None
+        if self.bucket[hash_key] != None:
+            self.bucket[hash_key] = None
 
     def contains(self, key: int) -> bool:
         hash_key = self.hash(key)
