@@ -14,8 +14,9 @@ class Solution(object):
         """
         s = set()
         for num in nums:
-            if num in s:
+            if num not in s:
+                s.add(num)
+            else:
                 return True
-            s.add(num)
         return False
         
