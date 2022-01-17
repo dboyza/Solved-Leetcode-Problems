@@ -12,5 +12,10 @@ class Solution(object):
                 seen[nums[i]] = i
         return False
         """
-        return len(nums) != len(set(nums))
+        s = set()
+        for num in nums:
+            if num in s:
+                return True
+            s.add(num)
+        return False
         
