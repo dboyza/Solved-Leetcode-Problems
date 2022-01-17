@@ -12,8 +12,5 @@ class Solution(object):
                 seen[nums[i]] = i
         return False
         """
-        hashset = set(nums)
-        if len(hashset) < len(nums):
-            return True
-        return False
+        return len(nums) != len(set(nums))
         
