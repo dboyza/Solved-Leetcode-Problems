@@ -13,4 +13,4 @@ class Solution(object):
                     return False
             else:
                 stack.append(char)
-        return len(stack) == 0
+        return stack == []
