@@ -11,5 +11,5 @@ class Solution(object):
             if char not in mydict:
                 stack.append(char)
             elif stack == [] or stack.pop() != mydict[char]:
-                    return False
+                return False
         return stack == []
