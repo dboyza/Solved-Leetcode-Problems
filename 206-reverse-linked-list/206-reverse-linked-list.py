@@ -9,9 +9,9 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        
         before = None
         curr = head
+        
         while curr:
             after = curr.next
             curr.next = before
