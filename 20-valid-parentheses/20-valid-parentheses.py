@@ -8,8 +8,9 @@ class Solution(object):
         stack = []
         
         for char in s:
-            if char not in mydict:
+            if char in mydict:
+                if stack == [] or stack.pop() != mydict[char]:
+                    return False
+            else:
                 stack.append(char)
-            elif stack == [] or stack.pop() != mydict[char]:
-                return False
         return stack == []
