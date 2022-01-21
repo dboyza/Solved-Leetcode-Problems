@@ -5,6 +5,7 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
+        """
         if len(needle) == 0:
             return 0
         
@@ -12,4 +13,8 @@ class Solution(object):
             if haystack[i:i+len(needle)] == needle:
                 return i
             
+        return -1
+        """
+        if needle in haystack:
+            return haystack.index(needle)
         return -1
