@@ -6,16 +6,15 @@ class Solution(object):
         :rtype: int
         """
         count = 0
-        start = 0
-        end = len(nums)-1
+        length = len_i = len(nums)
+        i = 0
         
-        while start <= end:
-            if nums[start] == val:
-                nums[start] = nums[end]
-                nums[end] = nums[start]
-                end -= 1
+        while i < length:
+            if nums[i] == val:
                 count += 1
+                del nums[i]
+                length -= 1
             else:
-                start += 1
+                i += 1
                 
-        return start
+        return len_i-count
