@@ -1,10 +1,5 @@
-class Solution(object):
-    def removeElement(self, nums, val):
-        """
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
-        """
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
         start = 0
         end = len(nums)-1
         
@@ -14,5 +9,5 @@ class Solution(object):
                 end -= 1
             else:
                 start += 1
-                
+        
         return start
