@@ -1,19 +1,15 @@
-class Solution(object):
-    def firstUniqChar(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
         occur = {}
         
-        for char in s:
+        for i, char in enumerate(s):
             if char in occur:
-                occur[char] += 1
+                occur[char] = -1
             else:
-                occur[char] = 1
+                occur[char] = i
         
-        for i in range(len(s)):
-            if occur[s[i]] == 1:
-                return i
+        for key in occur:
+            if occur[key] != -1:
+                return occur[key]
             
         return -1
