@@ -13,11 +13,9 @@ class Solution:
         
         curr = node
         
-        while curr.next:
-            curr.val = curr.next.val
+        while curr:
+            if curr.next:
+                curr.val = curr.next.val
             if curr.next.next == None:
                 curr.next = None
-            else:
-                curr = curr.next
-            
-        curr = None
+            curr = curr.next
