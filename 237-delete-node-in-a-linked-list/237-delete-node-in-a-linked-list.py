@@ -20,5 +20,4 @@ class Solution:
             else:
                 curr = curr.next
             
-            
         curr = None
