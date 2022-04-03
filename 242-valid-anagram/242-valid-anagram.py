@@ -3,17 +3,15 @@ class Solution:
         if len(s) != len(t):
             return False
         
-        counts_a = {}
-        counts_b = {}
+        counts_s = {}
+        counts_t = {}
         
-        for char in s:
-            counts_a[char] = 1 + counts_a.get(char, 0)
-            
-        for char in t:
-            counts_b[char] = 1 + counts_b.get(char, 0)
+        for i in range(len(s)):
+            counts_s[s[i]] = 1 + counts_s.get(s[i], 0)
+            counts_t[t[i]] = 1 + counts_t.get(t[i], 0)
         
-        for key in counts_a:
-            if key not in counts_b or counts_a[key] != counts_b[key]:
+        for key in counts_s:
+            if key not in counts_t or counts_s[key] != counts_t[key]:
                 return False
             
         return True
