@@ -9,10 +9,8 @@ class Solution:
         if not headA or not headB:
             return None
         
-        lenA = 0
-        lenB = 0
-        currA = headA
-        currB = headB
+        lenA, lenB = 0, 0
+        currA, currB = headA, headB
         
         while currA:
             lenA += 1
@@ -34,7 +32,5 @@ class Solution:
                 return headA
             headA = headA.next
             headB = headB.next
-            
-        return None
         
             
