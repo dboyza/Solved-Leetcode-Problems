@@ -1,16 +1,20 @@
-class Solution(object):
-    def romanToInt(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        r = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        num = 0
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        mapping = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        ans = 0
         
-        for i in range(len(s)-1):
-            if r[s[i]] < r[s[i+1]]:
-                num -= r[s[i]]
+        if len(s) == 1:
+            return mapping[s]
+        
+        last = mapping[s[len(s)-1]]
+        ans += last
+        
+        for i in range(len(s)-2, -1, -1):
+            if mapping[s[i]] < last:
+                ans -= mapping[s[i]]
             else:
-                num += r[s[i]]
-        num += r[s[-1]]
-        return num
+                ans += mapping[s[i]]
+                
+            last = mapping[s[i]]
+            
+        return ans
